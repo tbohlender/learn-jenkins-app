@@ -31,6 +31,7 @@ pipeline {
                 sh '''
                     echo "Test Learn Jenkins App ..."
                     test -f build/index.html
+                    npm test
                 '''
             }
         }
