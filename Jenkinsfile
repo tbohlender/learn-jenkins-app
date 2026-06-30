@@ -2,6 +2,10 @@ pipeline {
     agent any
 
     stages {
+        /*
+            Some Test to show commenting
+            Actually also multiline.
+        */
         stage('Build') {
             agent {
                 docker {
