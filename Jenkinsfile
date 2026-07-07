@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo "Build Learn Jenkins App ..."
+                    echo "Build Learn Jenkins App ... changed a bit"
                     ls -la
                     node --version
                     npm --version
