@@ -12,11 +12,6 @@ pipeline {
             Some Test to show commenting
             Actually also multiline.
         */
-        stage('Docker'){
-            steps {
-                sh 'docker build -t my-playwright .'
-            }
-        }
         
         stage('Build') {
             agent {
