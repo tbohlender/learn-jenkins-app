@@ -20,12 +20,15 @@ pipeline {
                     args "--entrypoint=''"
                 }
             }
+            environment {
+                AWS_S3_BUCKET = 'learn-jenkins-20260719-1612'
+            }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws-learn-jenkins-app', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
                     sh '''
                         aws --version
                         echo "Hello S3!" > test.txt
-                        aws s3 cp test.txt s3://learn-jenkins-20260719-1612/test.txt
+                        aws s3 cp test.txt s3://$AWS_S3_BUCKET/test.txt
                     '''
                 }
             }
